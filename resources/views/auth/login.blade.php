@@ -42,16 +42,22 @@
                     @csrf
                     <div class="form-group mb-3">
                       <label for="emailaddress" class="form-label">Email address</label>
-                      <input class="form-control" type="email" name="email" id="email" :value="old('email')"
-                        autofocus placeholder="Enter your email">
-                      <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                      <input class="form-control @error('email') is-invalid @enderror" type="email" name="email"
+                        id="email" :value="old('email')" autofocus placeholder="Enter your email">
+                      {{-- <x-input-error :messages="$errors->get('email')" class="mt-2" /> --}}
+                      @error('email')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                      @enderror
                     </div>
 
                     <div class="form-group mb-3">
                       <label for="password" class="form-label">Password</label>
-                      <input class="form-control" type="password" name="password" autocomplete="current-password"
-                        id="password" placeholder="Enter your password">
-                      <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                      <input class="form-control @error('password') is-invalid @enderror" type="password"
+                        name="password" autocomplete="current-password" id="password"
+                        placeholder="Enter your password">
+                      @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                      @enderror
                     </div>
 
                     <div class="form-group d-flex mb-3">
