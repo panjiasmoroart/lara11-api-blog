@@ -42,4 +42,14 @@ class AdminController extends Controller
 
         return redirect()->back()->withErrors(['email' => 'Invalid Credentials Provided']);
     }
+
+    public function ShowVerification()
+    {
+        return view('auth.verify');
+    }
+
+    public function VerificationVerify(Request $request)
+    {
+
+    }
 }
