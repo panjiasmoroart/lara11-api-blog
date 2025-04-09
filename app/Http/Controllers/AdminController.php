@@ -33,11 +33,12 @@ class AdminController extends Controller
 
             session(['verification_code' => $verificationCode, 'user_id' => $user->id ]);
 
-            Mail::to($user->email)->send(new VerificationCodeMail($verificationCode));
+            // Mail::to($user->email)->send(new VerificationCodeMail($verificationCode));
 
      		Auth::logout();
 
-            return redirect()->route('custom.verification.form')->with('status','Verification code send to your email');
+            return redirect()->route('custom.verification.form')->with('status', 'Verification code sent to your email ' . session('verification_code'));
+
         }
 
         return redirect()->back()->withErrors(['email' => 'Invalid Credentials Provided']);
