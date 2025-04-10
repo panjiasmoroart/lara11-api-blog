@@ -38,6 +38,8 @@
                 </div>
 
                 <div class="pt-0">
+                  {{-- default login without two factor auth  --}}
+                  {{-- {{ route('login') }} --}}
                   <form method="POST" action="{{ route('admin.login') }}" class="my-4">
                     @csrf
                     <div class="form-group mb-3">
