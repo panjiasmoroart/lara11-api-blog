@@ -24,7 +24,8 @@
 
               <div class="align-items-center">
                 <div class="d-flex align-items-center">
-                  <img src="{{ asset('backend/assets/images/users/user-11.jpg') }}"
+                  <img
+                    src="{{ !empty($profileData->image) ? url('upload/user_images/' . $profileData->image) : url('upload/no_image.jpg') }}"
                     class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
 
                   <div class="overflow-hidden ms-4">
@@ -61,65 +62,44 @@
                             </div>
                           </div>
 
-                          <div class="card-body">
-                            <div class="form-group mb-3 row">
-                              <label class="form-label">First Name</label>
-                              <div class="col-lg-12 col-xl-12">
-                                <input class="form-control" type="text" value="Charles">
-                              </div>
-                            </div>
-
-                            <div class="form-group mb-3 row">
-                              <label class="form-label">Last Name</label>
-                              <div class="col-lg-12 col-xl-12">
-                                <input class="form-control" type="text" value="Buncle">
-                              </div>
-                            </div>
-
-                            <div class="form-group mb-3 row">
-                              <label class="form-label">Contact Phone</label>
-                              <div class="col-lg-12 col-xl-12">
-                                <div class="input-group">
-                                  <span class="input-group-text"><i class="mdi mdi-phone-outline"></i></span>
-                                  <input class="form-control" type="text" placeholder="Phone"
-                                    aria-describedby="basic-addon1" value="+61 399615">
+                          <form>
+                            <div class="card-body">
+                              <div class="form-group mb-3 row">
+                                <label class="form-label"> Name</label>
+                                <div class="col-lg-12 col-xl-12">
+                                  <input class="form-control" type="text" name="name"
+                                    value="{{ $profileData->name }}">
                                 </div>
                               </div>
-                            </div>
 
-                            <div class="form-group mb-3 row">
-                              <label class="form-label">Email Address</label>
-                              <div class="col-lg-12 col-xl-12">
-                                <div class="input-group">
-                                  <span class="input-group-text"><i class="mdi mdi-email"></i></span>
-                                  <input type="text" class="form-control" value="CharlesBuncle@dayrep.com"
-                                    placeholder="Email" aria-describedby="basic-addon1">
+                              <div class="form-group mb-3 row">
+                                <label class="form-label">Email</label>
+                                <div class="col-lg-12 col-xl-12">
+                                  <input class="form-control" type="email" name="email"
+                                    value="{{ $profileData->email }}">
                                 </div>
                               </div>
-                            </div>
 
-                            <div class="form-group mb-3 row">
-                              <label class="form-label">Company</label>
-                              <div class="col-lg-12 col-xl-12">
-                                <input class="form-control" type="text" value="zoyothemes">
+                              <div class="form-group mb-3 row">
+                                <label class="form-label">Profile Image</label>
+                                <div class="col-lg-12 col-xl-12">
+                                  <input class="form-control" type="file" name="image">
+                                </div>
                               </div>
-                            </div>
 
-                            <div class="form-group mb-3 row">
-                              <label class="form-label">City</label>
-                              <div class="col-lg-12 col-xl-12">
-                                <input class="form-control" type="text" value="Adelaide">
+
+                              <div class="form-group mb-3 row">
+                                <div class="col-lg-12 col-xl-12">
+                                  <img
+                                    src="{{ !empty($profileData->image) ? url('upload/user_images/' . $profileData->image) : url('upload/no_image.jpg') }}"
+                                    class="rounded-circle avatar-xxl img-thumbnail float-start" alt="image profile">
+                                </div>
                               </div>
-                            </div>
 
-                            <div class="form-group mb-3 row">
-                              <label class="form-label">Address</label>
-                              <div class="col-lg-12 col-xl-12">
-                                <input class="form-control" type="text" value="Australia">
-                              </div>
-                            </div>
+                              <button type="submit" class="btn btn-primary">Save Changes </button>
 
-                          </div><!--end card-body-->
+                            </div><!--end card-body-->
+                          </form>
                         </div>
                       </div>
 
