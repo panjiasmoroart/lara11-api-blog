@@ -101,8 +101,13 @@ class ProfileController extends Controller
 
     private function deleteOldImage(string $oldPhotoPath): void {
         $fullPath = public_path('upload/user_images/'.$oldPhotoPath);
+
         if (file_exists($fullPath)) {
             unlink($fullPath);
         }
-     }
+    }
+
+    public function PasswordUpdate(Request $request){
+        echo "proses update";
+    }
 }
