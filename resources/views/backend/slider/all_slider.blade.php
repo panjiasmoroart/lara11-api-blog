@@ -23,7 +23,7 @@
           <div class="card">
 
             <div class="card-body">
-              <table id="datatable" class="table table-bordered dt-responsive table-responsive nowrap">
+              <table id="datatable" class="table table-bordered dt-responsive table-responsive ">
                 <thead>
                   <tr>
                     <th>No</th>
@@ -40,30 +40,23 @@
                     <tr>
                       <td>{{ $key + 1 }}</td>
                       <td><img src="{{ asset($item->image) }}" style="width:70px; height:40px;"></td>
-                      <td>{{ $item->heading }}</td>
-                      <td>{{ Str::limit($item->description, 20) }}</td>
+                      <td>{{ Str::limit($item->heading, 100) }}</td>
+                      <td>{{ Str::limit($item->description, 30) }}</td>
                       <td>{{ $item->link }}</td>
                       <td>
-                        <a href="" class="btn btn-success btn-sm">Edit</a>
-                        <a href="" class="btn btn-danger btn-sm">Delete</a>
-
+                        <div class="d-flex">
+                          <a href="" class="btn btn-success btn-sm">Edit</a> &nbsp;
+                          <a href="" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
                       </td>
                     </tr>
                   @endforeach
-
-
                 </tbody>
               </table>
             </div>
-
           </div>
         </div>
       </div>
-
-
-
-
     </div> <!-- container-fluid -->
-
   </div> <!-- content -->
 @endsection
