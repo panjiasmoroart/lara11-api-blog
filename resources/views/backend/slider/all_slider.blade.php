@@ -46,7 +46,8 @@
                       <td>
                         <div class="d-flex">
                           <a href="{{ route('edit.slider', $item->id) }}" class="btn btn-success btn-sm">Edit</a> &nbsp;
-                          <a href="" class="btn btn-danger btn-sm">Delete</a>
+                          <a href="{{ route('delete.slider', $item->id) }}" class="btn btn-danger btn-sm"
+                            id="delete">Delete</a>
                         </div>
                       </td>
                     </tr>
