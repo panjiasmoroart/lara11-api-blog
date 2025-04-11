@@ -120,7 +120,7 @@
         <li>
           <a href="#BlogCategory" data-bs-toggle="collapse">
             <i data-feather="aperture"></i>
-            <span> Manage BlogCategory </span>
+            <span> BlogCategory </span>
             <span class="menu-arrow"></span>
           </a>
           <div class="collapse" id="BlogCategory">
