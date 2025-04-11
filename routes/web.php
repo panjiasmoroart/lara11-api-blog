@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\ServiceController;
 use App\Http\Controllers\Backend\GatewayController;
+use App\Http\Controllers\Backend\TestimonialController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -53,6 +54,15 @@ Route::middleware('auth')->group(function () {
   	    Route::post('/update/gateway/one', 'UpdateGetWayOne')->name('update.gateway.one');
         Route::get('/gateway/two', 'GetWayTwo')->name('gateway.two');
         Route::post('/update/gateway/two', 'UpdateGetWayTwo')->name('update.gateway.two');
+    });
+
+    Route::controller(TestimonialController::class)->group(function(){
+        Route::get('/all/testimonial', 'AllTestimonial')->name('all.testimonial');
+        Route::get('/add/testimonial', 'AddTestimonial')->name('add.testimonial');
+        Route::post('/store/service', 'StoreService')->name('store.service');
+        Route::get('/edit/service/{id}', 'EditService')->name('edit.service');
+        Route::post('/update/service', 'UpdateService')->name('update.service');
+        Route::get('/delete/service/{id}', 'DeleteService')->name('delete.service');
     });
 
 });
