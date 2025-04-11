@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\GatewayOne;
- use Intervention\Image\ImageManager;
- use Intervention\Image\Drivers\Gd\Driver;
-
+use App\Models\GatewayTwo;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class GatewayController extends Controller
 {
@@ -60,5 +60,11 @@ class GatewayController extends Controller
 
             return redirect()->back()->with($notification);
         }
+    }
+
+    public function GetWayTwo()
+    {
+        $gettwo = GatewayTwo::find(1);
+        return view('backend.gateway.gateway_two', compact('gettwo'));
     }
 }
