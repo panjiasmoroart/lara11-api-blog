@@ -104,8 +104,23 @@ class ServiceController extends Controller
             );
 
             return redirect()->route('all.service')->with($notification);
-
         }
+    }
+
+    public function DeleteService($id)
+    {
+        $item = Service::find($id);
+        $img = $item->image;
+        unlink($img);
+
+        Service::find($id)->delete();
+
+        $notification = array(
+            'message' => 'Service Delete Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
     }
 
 

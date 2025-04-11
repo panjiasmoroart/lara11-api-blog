@@ -44,9 +44,8 @@
                       <td>{{ $item->icon }}</td>
                       <td>
                         <a href="{{ route('edit.service', $item->id) }}" class="btn btn-success btn-sm">Edit</a>
-                        <a href="{{ route('delete.slider', $item->id) }}" class="btn btn-danger btn-sm"
+                        <a href="{{ route('delete.service', $item->id) }}" class="btn btn-danger btn-sm"
                           id="delete">Delete</a>
-
                       </td>
                     </tr>
                   @endforeach
