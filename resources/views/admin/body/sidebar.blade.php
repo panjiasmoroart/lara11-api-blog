@@ -45,7 +45,7 @@
 
         <li>
           <a href="#sidebarAuth" data-bs-toggle="collapse">
-            <i data-feather="users"></i>
+            <i data-feather="file-text"></i>
             <span> Manage Slider </span>
             <span class="menu-arrow"></span>
           </a>
@@ -63,7 +63,7 @@
 
         <li>
           <a href="#sidebarError" data-bs-toggle="collapse">
-            <i data-feather="alert-octagon"></i>
+            <i data-feather="package"></i>
             <span> Manage Services </span>
             <span class="menu-arrow"></span>
           </a>
@@ -100,7 +100,7 @@
 
         <li>
           <a href="#Testimonial" data-bs-toggle="collapse">
-            <i data-feather="alert-octagon"></i>
+            <i data-feather="users"></i>
             <span> Manage Testimonial </span>
             <span class="menu-arrow"></span>
           </a>
