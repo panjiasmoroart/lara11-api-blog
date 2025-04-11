@@ -22,7 +22,7 @@
             <div class="card-body">
 
 
-              <form action="{{ route('update.gateway.one') }}" method="post" class="row g-3"
+              <form action="{{ route('update.gateway.two') }}" method="post" class="row g-3"
                 enctype="multipart/form-data">
                 @csrf
 
