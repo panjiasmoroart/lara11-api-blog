@@ -20,12 +20,8 @@
             </div><!-- end card header -->
 
             <div class="card-body">
-
-
-              <form action="{{ route('update.gateway.one') }}" method="post" class="row g-3"
-                enctype="multipart/form-data">
+              <form action="{{ route('update.aboutus') }}" method="post" class="row g-3" enctype="multipart/form-data">
                 @csrf
-
                 <input type="hidden" name="id" value="{{ $about->id }}">
 
                 <div class="col-md-6">
