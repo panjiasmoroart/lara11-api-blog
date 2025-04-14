@@ -70,4 +70,10 @@ class AboutPageController extends Controller
         return redirect()->back()->with($notification);
       }
     }
+
+    public function ContactMessage()
+    {
+        $contact = ContactPage::latest()->get();
+        return view('backend.contact.all_contact', compact('contact'));
+    }
 }
