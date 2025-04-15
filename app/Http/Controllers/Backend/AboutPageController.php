@@ -76,4 +76,13 @@ class AboutPageController extends Controller
         $contact = ContactPage::latest()->get();
         return view('backend.contact.all_contact', compact('contact'));
     }
+
+     //// Site About page Api
+    public function ApiAboutPage()
+    {
+        $about = AboutPage::find(1);
+        return $about;
+    }
+    // End Method
+    //// End About page Api
 }
