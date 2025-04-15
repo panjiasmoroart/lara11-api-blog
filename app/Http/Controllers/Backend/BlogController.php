@@ -181,4 +181,20 @@ class BlogController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    // Start Blog All api
+    public function ApiBlogCat()
+    {
+        $blogcat = BlogCategory::latest()->get();
+        return $blogcat;
+    }
+
+
+    public function ApiAllBlog()
+    {
+        $blogpost = BlogPost::latest()->get();
+        return $blogpost;
+    }
+    // End Blog All api
+
 }
