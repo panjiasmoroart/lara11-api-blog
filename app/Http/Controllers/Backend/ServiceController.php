@@ -123,5 +123,24 @@ class ServiceController extends Controller
         return redirect()->back()->with($notification);
     }
 
+     // Start Service api
+    public function AllServices()
+    {
+        $service = Service::latest()->get();
+        return $service;
+    }
+
+
+    public function getServiceBySlug($slug)
+    {
+        $service = Service::where('slug', $slug)->first();
+        if (!$service) {
+            return response()->json(['error' => 'Service not found'], 404);
+        }
+
+        return response()->json($service);
+    }
+
+
 
 }
