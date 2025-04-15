@@ -35,4 +35,11 @@ class SettingController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    //// Site Setting Api
+    public function ApiSiteSetting(){
+        $site = SiteSetting::find(1);
+        return $site;
+    }
+    // End Method
 }
