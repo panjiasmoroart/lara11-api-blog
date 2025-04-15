@@ -119,4 +119,16 @@ class GatewayController extends Controller
       }
 
     }
+
+    // Start GetWay api
+    public function ApiGatewayOne(){
+        $getone = Gatewayone::find(1);
+        return $getone;
+    }
+
+    public function ApiGatewayTwo(){
+        $gettwo = GateWayTwo::find(1);
+        return $gettwo;
+    }
+    // End Service api
 }
