@@ -116,4 +116,10 @@ class SliderController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    public function ApiAllSlider()
+    {
+        $slider = Slider::latest()->get();
+        return $slider;
+    }
 }
