@@ -236,6 +236,7 @@ class BlogController extends Controller
     }// End Method
 
 
+    // api
     public function getBlogsByCategory($category_id){
         $blogs = BlogPost::where('blogcat_id',$category_id)
         ->join('blog_categories', 'blog_posts.blogcat_id' , '=' ,
